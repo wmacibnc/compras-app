@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cadastrar Compra
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Compra</ion-label>
+      <ion-input type="text" [(ngModel)]="compra.descricao" name="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Quantidade</ion-label>
+      <ion-select [(ngModel)]="compra.quantidade">
+        <div *ngFor="let item of itens">
+          <ion-option value="{{item}}">{{item}}</ion-option>
+        </div>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="cadastrar()">Cadastrar</button>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <h4 style="margin-left: 16px">Minhas Compras</h4>
+    <ion-item *ngFor="let compra of lista | async">
+      <h2>{{compra.descricao || 'Não informado'}}</h2>
+      <div class="item-note" item-right>
+        {{compra.quantidade || '1'}}
+        <span (click)="excluir($event,compra)">
+            <ion-icon name="close-circle"></ion-icon>
+          </span>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

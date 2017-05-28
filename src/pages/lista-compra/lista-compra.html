@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Lista de Compras</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+  <button ion-item *ngFor="let compra of lista | async" (click)="adicionarItem($event, compra)">
+      {{compra.descricao || 'Não informado'}}
+      <div class="item-note" item-right>
+        {{compra.quantidade || '1'}}
+        <ion-icon name="checkbox-outline" *ngIf="compra.adicionado"></ion-icon>
+        <ion-icon name="remove-circle" *ngIf="!compra.adicionado"></ion-icon>
+      </div>
+    </button>
+</ion-content>
