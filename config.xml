@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Compras App</name>
+    <name>ComprasApp</name>
     <description>Minhas compras</description>
     <author email="wmacibnc@gmail.com" href="http://wmacibnc.github.io/">Wesley Martins - Full Stack- Developer</author>
     <content src="index.html"/>
