@@ -29,24 +29,26 @@ export class CompraPage {
   cadastrar() {
     this.compra.adicionado = false;
     this.lista.push(this.compra).then(() => {
-      let toast = this.toastCtrl.create({
-        message: 'Salvo com sucesso!',
-        duration: 3000
-      });
-      toast.present();
     });
     this.compra.descricao = '';
+    let toast = this.toastCtrl.create({
+        message: 'Salvo com sucesso!',
+        duration: 3000,
+        position: 'top'
+      });
+      toast.present();
   }
 
   excluir($event,compra){
     this.ref = this.db.object('/compras/' + compra.$key);
     this.ref.remove().then(() =>{
+    });
     let toast = this.toastCtrl.create({
         message: 'Item excluido!',
-        duration: 3000
+        duration: 3000,
+        position: 'top'
       });
       toast.present();
-    });
   }
 
 }

@@ -24,19 +24,19 @@ export class ListaCompra {
     this.ref = this.db.object('/compras/' + compra.$key);
     compra.adicionado = !compra.adicionado;
     let mensagem = "";
-    if(compra.adicionado){
+    if (compra.adicionado) {
       mensagem = "Item adicionado";
-    }else{
+    } else {
       mensagem = "Item removido";
     }
     this.ref.update(compra).then(() => {
-        let toast = this.toastCtrl.create({
-        message: mensagem,
-        duration: 3000
-      });
-      toast.present();
-    });    
-    
+    });
+    let toast = this.toastCtrl.create({
+      message: mensagem,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
   }
 
 }
